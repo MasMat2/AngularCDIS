@@ -1,0 +1,26 @@
+<div class="container">
+    <div *ngFor="let auto of autos">
+        <div class="list-item">
+            <div (click)="open(content, auto)">
+                <img src="assets/static/list/icon/eye-solid.svg" width="25px" height="25px" alt="">
+            </div>
+            <div>{{auto.descripcion}}</div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h2 class="modal-title small" id="modal-basic-title">{{autoSeleccionado.descripcion}}</h2>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="auto-info small">
+          <label><b>Marca:</b> {{autoSeleccionado.marca}}</label>
+          <label><b>Submarca:</b> {{autoSeleccionado.submarca}}</label>
+          <label><b>Modelo:</b> {{autoSeleccionado.modelo}}</label>
+          <label><b>Descripcion:</b> {{autoSeleccionado.descripcion}}</label>
+          <label><b>Fecha registro:</b> {{autoSeleccionado.fecha_registro}}</label>
+        </div>
+    </div> 
+  </ng-template>

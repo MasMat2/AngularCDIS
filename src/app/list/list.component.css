@@ -1,0 +1,19 @@
+.container{
+    margin: 0% 5%;
+
+}
+
+.list-item{
+    width: 90%;
+    margin: 1% 0%;
+    padding: 1%;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.auto-info>label{
+    display: block;
+}
