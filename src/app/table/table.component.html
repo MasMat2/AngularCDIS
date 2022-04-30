@@ -1,0 +1,32 @@
+<div class="container">
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Submarca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Ocupantes</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let auto of autos | slice: (page-1) * pageSize : page * pageSize ; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ auto._id }}</td>
+                    <td>{{ auto.submarca }}</td>
+                    <td>{{ auto.modelos }}</td>
+                    <td>{{ auto.descripcioncorta }}</td>
+                    <td>{{ auto.Ocupantes }}</td>
+                    <td (click)="openModalEditar(auto)"><img src="assets/static/table/icons/pencil-square.svg"  width="20px" alt="Editar"></td>
+                    <td (click)="openModalEliminar(auto)"><img src="assets/static/table/icons/trash.svg"  width="20px" alt="Eliminar"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ngb-pagination class=" text-dark d-flex justify-content-center" [collectionSize]="autos.length" [(page)]="page"
+        [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+</div>

@@ -1,0 +1,36 @@
+<form #formAutos="ngForm">
+    <div class="modal-header">
+        <h2 class="modal-title small" id="modal-basic-title">{{accion}}</h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" class="form-control" id="marca" [(ngModel)]="auto.marca" name="marca"
+                placeholder="Agregar la marca">
+        </div>
+        <div class="form-group">
+            <label for="marca">Submarca</label>
+            <input type="text" class="form-control" id="submarca" [(ngModel)]="auto.submarca" name="submarca"
+                placeholder="Agregar la submarca">
+        </div>
+        <div class="form-group">
+            <label for="modelo">Modelo</label>
+            <input type="text" diabled class="form-control" id="modelo" [(ngModel)]="auto.modelos" name="modelos"
+                placeholder="Agregar el modelo">
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" [(ngModel)]="auto.descripcioncorta"
+                name="descripcioncorta" placeholder="Agregar la descripcion">
+        </div>
+        <div class="form-group">
+            <label for="ocupantes">Ocupantes</label>
+            <input type="text" class="form-control" id="ocupantes" [(ngModel)]="auto.Ocupantes" name="Ocupantes"
+                placeholder="Agregar numero de ocupantes">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-outline-dark" (click)="modal.close(auto)">{{accion}}</button>
+    </div>
+</form>

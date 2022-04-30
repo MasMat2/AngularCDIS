@@ -1,22 +1,15 @@
 .container{
-    margin: 0% 5%;
-    
-}
-
-
-.list-item{
-    width: 95%;
-    margin: 1% 0%;
-    padding: 1%;
-    background-color: rgb(240, 240, 240);
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-}
-
-.auto-info>label{
+    width: auto;
     display: block;
+    font-size: xx-small;
+}
+
+.container>div{
+    display: flex;
+    justify-content: center;
+}
+.container>table{
+    width: 90%;
 }
 
 ngb-pagination ::ng-deep a {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Automovil } from 'src/app/models';
-import { AUTOMOVILES } from 'src/app/data';
-
+import { AutosService } from 'src/app/services/autos.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -13,13 +12,18 @@ export class ListComponent implements OnInit {
   autos!: Automovil[];
   autoSeleccionado!: Automovil;
 
+  page=1;
+  pageSize=10;
   // constructor() {
   // }
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private autosService: AutosService) {
   }
 
   ngOnInit(): void {
-    this.autos = AUTOMOVILES;
+    this.autosService.getAutos().subscribe((response)=>{
+      this.autos = response.data;
+    })
+
   }
 
   onSelect(auto: Automovil){
